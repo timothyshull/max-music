@@ -1,0 +1,1 @@
+This is a collection of projects that I completed for various music technology classes.  

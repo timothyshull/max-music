@@ -1,0 +1,69 @@
+#N canvas 181 22 1091 852 10;
+#X obj 385 203 metro 0;
+#X obj 335 129 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 457 61 5 0 0 0 - - -;
+#X obj 422 104 / 1;
+#X obj 422 62 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 422 82 1;
+#X obj 422 130 * 60000;
+#X obj 422 155 int;
+#X floatatom 423 179 5 0 0 0 - - -;
+#X obj 289 252 key;
+#X floatatom 288 278 5 0 0 0 - - -;
+#X obj 385 230 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 342 432 spigot;
+#X msg 558 239 \; pd dsp 1;
+#X obj 558 204 loadbang;
+#X obj 420 361 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 343 461 send toNetwork;
+#X msg 440 203 list /metVal \$1;
+#X msg 334 257 list /metro \$1;
+#X msg 328 345 list /note \$1;
+#X text 116 128 Turn performer's metronome on/off;
+#X text 501 61 Set performer's metronome (in BPM);
+#X text 453 361 Turn network message sending on/off;
+#X text 706 255 General notes: This patch serves as the conductor for
+the app running on iOS devices. The Mob Mu Plat wrapper patch must
+be opened on the computer also for this to communicate with the devices.
+;
+#X text 705 331 The keyboard keys pressed by the conductor will tell
+the performer which note to play. The computer keyboard keys translate
+to notes as follows:;
+#X text 834 427 a = C;
+#X text 834 440 w = Db;
+#X text 834 452 s = D;
+#X text 834 463 e = Eb;
+#X text 834 474 d = E;
+#X text 834 488 f = F;
+#X text 834 501 t = Gb;
+#X text 834 512 g = G;
+#X text 835 525 y = Ab;
+#X text 836 538 h = A;
+#X text 836 550 u = Bb;
+#X text 836 563 j = B;
+#X text 725 427 Computer Key;
+#X text 903 429 Musical Note;
+#X connect 0 0 11 0;
+#X connect 1 0 0 0;
+#X connect 1 0 18 0;
+#X connect 2 0 3 1;
+#X connect 2 0 4 0;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 1;
+#X connect 8 0 17 0;
+#X connect 9 0 10 0;
+#X connect 10 0 19 0;
+#X connect 12 0 16 0;
+#X connect 14 0 13 0;
+#X connect 15 0 12 1;
+#X connect 17 0 12 0;
+#X connect 18 0 12 0;
+#X connect 19 0 12 0;
